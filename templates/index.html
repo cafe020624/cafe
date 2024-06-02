@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}{% trans "App Name" %}{% endblock title %}
+{% block header %}
+
+{% endblock header %}
+{% block content %}
+
+<div  class="row justify-content-center">				
+	<div class="col-md-6" align="center">				
+		<img src="{% static 'images/index.jpg' %}" alt="index" class="img-center">			
+	</div>
+	<div class="col-md-6">
+		<h2 class="text-center"><a class="nav-link" href="#home">{% trans "Welcome" %}!</a></h2>	
+		<h2 align="center">Кафе «Дәмді!»</h2>
+		<p align="center">Добро пожаловать в наше уютное семейное кафе!</p>
+		<address>
+			<p align="center">улица Баймагамбетова 172,<br>Костанай 110000</p>			
+		</address>			
+	</div>	
+</div>	
+		
+<!-- Каталог -->
+<hr>
+<div class="div-width-100-text-center">
+	<h3>{% trans "Full Catalog" %}</h3>
+</div>
+<section id="catalog">
+	<div class="row">
+		{% if catalog.count > 0 %}
+			{% for c in catalog %}
+			<div class="col-lg-3">
+				{% if c.photo.url != None %}					
+					<img style="height:200px; max-width:200px;;" src="{{ c.photo.url}}" alt="{{ c.title }}" >
+				{% endif %}
+				<h4><a href="{% url 'catalog_details' c.id %}">{{ c.catalog_title }}</a></h4>
+				<h5>{{ c.price }}  〒</h5>					
+				{% if c.avg_rating != None %}
+				<p><div class="Stars" style='--rating: {{ c.avg_rating| stringformat:".1f" }};'></div></p>							
+				<!-- <h6>{% trans "Avg Rating" %}: {{ c.avg_rating | floatformat:1 }}</h6>								 -->
+				{% endif %}
+			</div>
+			{% endfor %}
+		{% endif %}						
+	</div>
+	<h3 style="text-align: center;" ><a href="{% url 'catalog_list' %}">{% trans "Full Catalog" %}</a></h3>
+</section>
+	
+<div class="jumbotron">
+	<div class="div-width-100-text-center">
+		<h3>{% trans "newss" %}</h3>
+	</div>
+	<hr class="my-4">
+	<div class="row">
+		{% if news1.count > 0 %}
+		<div class="col-lg-8 border">
+			{% for c in news1 %}
+				<center><p><strong>{{ c.daten | date:"d.m.Y H:i" }}</strong></p></center>
+				{% if c.photo.url != None %}
+					<img class="img-center" src="{{ c.photo.url}}" alt="{{ c.title }}" title="{{ c.details }}">
+				{% endif %}
+				<h4><a href="{% url 'news_read' c.id %}">{{ c.title }}</a></h4>
+				<p>{{ c.details | linebreaks}}</p>
+			{% endfor %}
+		</div>
+		<div class="col-lg-4 border">
+			{% if news24.count > 0 %}
+				{% for c in news24 %}
+				<center><p><strong>{{ c.daten | date:"d.m.Y H:i" }}</strong></p></center>
+				<div class="row">
+					{% if c.photo.url != None %}
+						<img class="img-center3" src="{{ c.photo.url}}" alt="{{ c.title }}" title="{{ c.details }}">
+					{% endif %}
+				</div>
+				<div class="row">
+					<h5><a href="{% url 'news_read' c.id %}">{{ c.title }}</a></h5>
+				</div>
+				<hr class="my-4">
+				{% endfor %}
+			{% endif %}
+		</div>
+		{% endif %}
+	</div>
+	<h3 style="text-align: center;" ><a href="{% url 'news_list' %}">{% trans "all newss" %}</a></h3>
+</div>
+
+{% endblock content %}
+

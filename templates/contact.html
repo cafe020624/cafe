@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% endblock title %}
+{% block header %}{% endblock header %} 
+{% block content %}
+<div class="div-width-100-text-center">
+	<h3>{% trans "Contacts" %}</h3>
+</div>
+<div class="row">
+	<div class="col-md-3">
+		<br>
+		<h2 align="center">Кафе «Дәмді!»</h2>
+		<p align="center">Добро пожаловать в наше уютное семейное кафе!</p>
+		<address>
+			<p align="center">улица Баймагамбетова 172,<br>Костанай 110000</p>			
+		</address>				
+	</div>
+	<div class="col-md-9" style="position:relative;overflow:hidden;">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2388.8841409224765!2d63.63308457698126!3d53.219925684174896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43cc8a693049600f%3A0x70ed0bc830a2fd95!2z0YPQu9C40YbQsCDQkdCw0LnQvNCw0LPQsNC80LHQtdGC0L7QstCwIDE3Miwg0JrQvtGB0YLQsNC90LDQuSAxMTAwMDA!5e0!3m2!1sru!2skz!4v1717309661971!5m2!1sru!2skz" width="100%" height="500px" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+	</div>
+</div>
+{% endblock content %}
