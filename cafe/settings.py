@@ -29,8 +29,7 @@ SECRET_KEY = 'django-insecure-d45g*2+u4x-j7cw2vzm!1%rauoba)gd6a33+3j-#34fms!pf(%
 DEBUG = False
 #DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'cafe-shop.onrender.com',]
-
+ALLOWED_HOSTS = ['127.0.0.1', '/cafe-shop-o4cf.onrender.com',]
 
 # Application definition
 
@@ -95,23 +94,24 @@ DATABASES = {
     #    'ENGINE': 'django.db.backends.sqlite3',
     #    'NAME': BASE_DIR / 'db.sqlite3',
     #}
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'cafe',
-        'USER' : 'customer',
-        'PASSWORD' : 'customer',
-        'HOST' : '127.0.0.1',
-        'PORT' : '5432',
-    }
-    
+
     #'default': {
-	   # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
-	   # 'NAME': 'cafe_7gix',
-	   # 'USER' : 'cafe_admin',
-	   # 'PASSWORD' : 'iim7An34Ko6ZBGjaLmJ0Qlfe8SdbahPI',
-	   # 'HOST' : 'dpg-colrtlgl5elc73bojg10-a.frankfurt-postgres.render.com',
-	   # 'PORT' : '5432',
+    #    'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #    'NAME': 'cafe',
+    #    'USER' : 'customer',
+    #    'PASSWORD' : 'customer',
+    #    'HOST' : '127.0.0.1',
+    #    'PORT' : '5432',
     #}
+    
+    'default': {
+	    'ENGINE': 'django.db.backends.postgresql_psycopg2',
+	    'NAME': 'cafe_l989',
+	    'USER' : 'cafe_admin',
+	    'PASSWORD' : 'SPN6hFk84OwfUzWZYLUDJgORQXgBZfjA',
+	    'HOST' : 'dpg-cpe1nev109ks73eoabug-a.frankfurt-postgres.render.com',
+	    'PORT' : '5432',
+    }
 
 }
 
