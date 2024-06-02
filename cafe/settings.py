@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-d45g*2+u4x-j7cw2vzm!1%rauoba)gd6a33+3j-#34fms!pf(%
 DEBUG = False
 #DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '/cafe-shop-o4cf.onrender.com',]
+ALLOWED_HOSTS = ['127.0.0.1', 'cafe-shop-o4cf.onrender.com',]
 
 # Application definition
 
