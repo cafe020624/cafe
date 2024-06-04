@@ -37,6 +37,9 @@ class CatalogForm(forms.ModelForm):
             'details': Textarea(attrs={'cols': 100, 'rows': 5}),            
             'price': NumberInput(attrs={"size":"10", "min": "1", "step": "1"}),
         }
+        labels = {
+            'category': _('category_title'),            
+        }
     # Метод-валидатор для поля price
     def clean_price(self):
         data = self.cleaned_data['price']
